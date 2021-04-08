@@ -35,7 +35,7 @@ async def change_name(token, name):
     while True:
         if tries >= 50: return
         tries += 1
-        async with aiohttp.request("PUT", f"{NAME_CHANGE_API}{name}", headers=header, ) as response:
+        async with aiohttp.request("PUT", f"{NAME_CHANGE_API}{name}", headers=header) as response:
             if response.status == 200:
                 print(f"[STATUS] Successfully changed name to {name}")
                 return
