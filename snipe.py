@@ -18,8 +18,7 @@ async def main():
     print(f"[INFO] Waiting for IGN to become available at {time}")
     while True:
         now = datetime.now()
-        if f"{now.hour}:{now.minute}:{now.second}" != time:
-            continue
+        if f"{now.hour}:{now.minute}:{now.second}" != time: continue
         else: break
     async for attempt in change_name(token, name):
         print(attempt)
@@ -28,8 +27,8 @@ async def main():
 async def change_name(token, name):
     header = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
     print("[INFO] Requesting for security challenges to trust IP..")
-    async with aiohttp.request("GET", CHALLENGES_API, headers=header) as _:
-        pass  # nothing needs to be done with this data
+    async with aiohttp.request("GET", CHALLENGES_API, headers=header) as _: pass
+    # nothing needs to be done with this data
     print("[INFO] Sent request for security challenges, IP should be trusted now")
     tries = 0
     while True:
