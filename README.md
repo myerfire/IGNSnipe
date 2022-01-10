@@ -1,2 +1,2 @@
 # IGNSnipe
-Snipes a Minecraft username at a specified time
+This is archived now. I don't even know why this existed anyway, but now it doesn't.
